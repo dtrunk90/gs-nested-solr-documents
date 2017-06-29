@@ -44,7 +44,7 @@ dependencies {
 }
 
 task solrStart(type: Exec) {
-	workingDir 'bin/solr/bin'
+	workingDir 'src/main/resources/solr/bin'
 
 	commandLine 'cmd', '/c', 'solr.cmd'
 	commandLine './solr'
@@ -53,7 +53,7 @@ task solrStart(type: Exec) {
 }
 
 task solrStop(type: Exec) {
-	workingDir 'bin/solr/bin'
+	workingDir 'src/main/resources/solr/bin'
 
 	commandLine 'cmd', '/c', 'solr.cmd'
 	commandLine './solr'

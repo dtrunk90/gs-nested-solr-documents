@@ -77,3 +77,7 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 # End of https://www.gitignore.io/api/gradle,eclipse
+
+# Solr
+src/main/resources/solr/server/logs
+src/main/resources/solr/server/solr/collection1/data
