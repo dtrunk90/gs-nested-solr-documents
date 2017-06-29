@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot + Spring Data Solr: Nested Documents</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+</head>
+<body th:remove="all-but-first">
+	<dl th:unless="${#lists.isEmpty(products)}" th:each="product : ${products}" th:object="${product}">
+		<dt>id:</dt>
+		<dd th:text="*{id}">12345</dd>
+		<dt>name:</dt>
+		<dd th:text="*{name}">Product 12345</dd>
+		<dt>variant:</dt>
+		<dd th:text="*{variant}">false</dd>
+		<!--/*/<th:block th:unless="*{#lists.isEmpty(variants)}">/*/-->
+		<dt>variants:</dt>
+		<dd th:remove="all-but-first">
+			<dl th:each="variant : *{variants}" th:object="${variant}">
+				<dt>id:</dt>
+				<dd th:text="*{id}">12345-red</dd>
+				<dt>name:</dt>
+				<dd th:text="*{name}">Product 12345 red</dd>
+				<dt>variant:</dt>
+				<dd th:text="*{variant}">true</dd>
+			</dl>
+			<dl>
+				<dt>id:</dt>
+				<dd>12345-green</dd>
+				<dt>name:</dt>
+				<dd>Product 12345 green</dd>
+				<dt>variant:</dt>
+				<dd>true</dd>
+			</dl>
+			<dl>
+				<dt>id:</dt>
+				<dd>12345-blue</dd>
+				<dt>name:</dt>
+				<dd>Product 12345 blue</dd>
+				<dt>variant:</dt>
+				<dd>true</dd>
+			</dl>
+		</dd>
+		<!--/*/</th:block>/*/-->
+	</dl>
+	<dl>
+		<dt>id:</dt>
+		<dd>67890</dd>
+		<dt>name:</dt>
+		<dd>Product 67890</dd>
+		<dt>variant:</dt>
+		<dd>true</dd>
+	</dl>
+</body>
+</html>

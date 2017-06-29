@@ -1,0 +1,78 @@
+buildscript {
+	repositories {
+		jcenter()
+		maven { url 'http://repo.spring.io/milestone' }
+		maven { url 'https://repo.spring.io/snapshot' }
+	}
+
+	dependencies {
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.0.BUILD-SNAPSHOT'
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'gs-nested-solr-documents'
+	version =  '0.1.0'
+}
+
+repositories {
+	jcenter()
+	maven { url 'http://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	compile 'org.apache.solr:solr-core:6.5.0'
+	compile 'org.apache.solr:solr-solrj:6.5.0'
+	compile 'org.projectlombok:lombok:1.16.16'
+	compile 'org.springframework:spring-webmvc:5.0.0.BUILD-SNAPSHOT'
+	compile 'org.springframework.boot:spring-boot-starter-data-solr:2.0.0.BUILD-SNAPSHOT'
+	compile 'org.springframework.boot:spring-boot-starter-jetty:2.0.0.BUILD-SNAPSHOT'
+	compile 'org.springframework.boot:spring-boot-starter-thymeleaf:2.0.0.BUILD-SNAPSHOT'
+	compile 'org.springframework.data:spring-data-commons:2.0.0.BUILD-SNAPSHOT'
+	compile 'org.springframework.data:spring-data-solr:3.0.0.DATASOLR-394-SNAPSHOT'
+
+	testCompile 'junit:junit'
+}
+
+task solrStart(type: Exec) {
+	workingDir 'bin/solr/bin'
+
+	commandLine 'cmd', '/c', 'solr.cmd'
+	commandLine './solr'
+
+	args 'start'
+}
+
+task solrStop(type: Exec) {
+	workingDir 'bin/solr/bin'
+
+	commandLine 'cmd', '/c', 'solr.cmd'
+	commandLine './solr'
+
+	args 'stop', '-p 8983'
+
+	standardOutput = new ByteArrayOutputStream()
+
+	ext.output = {
+		return standardOutput.toString()
+	}
+}
+
+tasks.bootRun.dependsOn 'solrStart'
+
+bootRun {
+	doLast {
+		solrStop
+	}
+}
+
+wrapper.gradleVersion = '4.0'

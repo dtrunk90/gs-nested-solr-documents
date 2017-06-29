@@ -1,0 +1,51 @@
+2017-06-29 18:57:17.104 INFO  (main) [   ] o.e.j.s.Server jetty-9.3.14.v20161028
+2017-06-29 18:57:17.490 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 6.6.0
+2017-06-29 18:57:17.491 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2017-06-29 18:57:17.491 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr
+2017-06-29 18:57:17.504 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2017-06-29T18:57:17.492Z
+2017-06-29 18:57:17.505 INFO  (main) [   ] o.a.s.s.StartupLoggingUtils Property solr.log.muteconsole given. Muting ConsoleAppender named CONSOLE
+2017-06-29 18:57:17.518 INFO  (main) [   ] o.a.s.c.SolrResourceLoader Using system property solr.solr.home: /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/server/solr
+2017-06-29 18:57:17.523 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/server/solr/solr.xml
+2017-06-29 18:57:17.813 INFO  (main) [   ] o.a.s.u.UpdateShardHandler Creating UpdateShardHandler HTTP client with params: socketTimeout=600000&connTimeout=60000&retry=true
+2017-06-29 18:57:17.984 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/server/solr
+2017-06-29 18:57:17.986 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [collection1]
+2017-06-29 18:57:18.051 INFO  (main) [   ] o.e.j.s.Server Started @1557ms
+2017-06-29 18:57:18.117 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrResourceLoader [collection1] Added 51 libs to classloader, from paths: [/home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/contrib/clustering/lib, /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/contrib/extraction/lib, /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/contrib/langid/lib, /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/contrib/velocity/lib, /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/dist]
+2017-06-29 18:57:18.346 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrConfig Using Lucene MatchVersion: 6.6.0
+2017-06-29 18:57:18.541 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.s.IndexSchema [collection1] Schema name=example-data-driven-schema
+2017-06-29 18:57:19.292 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.s.IndexSchema Loaded schema example-data-driven-schema/1.6 with uniqueid field id
+2017-06-29 18:57:19.366 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.CoreContainer Creating SolrCore 'collection1' using configuration from instancedir /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/server/solr/collection1, trusted=true
+2017-06-29 18:57:19.397 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2017-06-29 18:57:19.403 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.c.SolrCore [[collection1] ] Opening new SolrCore at [/home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/server/solr/collection1], dataDir=[/home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/server/solr/collection1/data/]
+2017-06-29 18:57:20.315 INFO  (qtp754666084-33) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2017-06-29 18:57:20.357 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2017-06-29 18:57:20.949 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2017-06-29 18:57:20.949 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2017-06-29 18:57:21.001 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2017-06-29 18:57:21.002 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2017-06-29 18:57:21.055 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.s.SolrIndexSearcher Opening [Searcher@2a8e4e30[collection1] main]
+2017-06-29 18:57:21.074 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/server/solr/collection1/conf
+2017-06-29 18:57:21.096 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2017-06-29 18:57:21.104 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2017-06-29 18:57:21.111 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.h.c.QueryElevationComponent Loading QueryElevation from: /home/danny/workspace/gs-nested-solr-documents/src/main/resources/solr/server/solr/collection1/conf/elevate.xml
+2017-06-29 18:57:21.149 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.h.ReplicationHandler Commits will be reserved for  10000
+2017-06-29 18:57:21.230 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@2a8e4e30[collection1] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2017-06-29 18:57:21.230 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2017-06-29 18:57:21.231 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2017-06-29 18:57:21.234 INFO  (searcherExecutor-7-thread-1-processing-x:collection1) [   x:collection1] o.a.s.c.SolrCore [collection1] Registered new searcher Searcher@2a8e4e30[collection1] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2017-06-29 18:57:21.240 INFO  (coreLoadExecutor-6-thread-1) [   x:collection1] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1571566535300874240
+2017-06-29 18:57:21.877 INFO  (qtp754666084-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1498762641508} status=0 QTime=18
+2017-06-29 18:57:21.905 INFO  (qtp754666084-33) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1498762641510} status=0 QTime=39
+2017-06-29 18:57:21.905 INFO  (qtp754666084-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1498762641510} status=0 QTime=42
+2017-06-29 18:57:24.876 INFO  (qtp754666084-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1498762641508} status=0 QTime=0
+2017-06-29 18:57:24.887 INFO  (qtp754666084-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1498762641510} status=0 QTime=9
+2017-06-29 18:57:24.891 INFO  (qtp754666084-35) [   x:collection1] o.a.s.c.S.Request [collection1]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1498762644859} status=0 QTime=5
+2017-06-29 18:57:24.897 INFO  (qtp754666084-19) [   x:collection1] o.a.s.c.S.Request [collection1]  webapp=/solr path=/replication params={wt=json&command=details&_=1498762644860} status=0 QTime=2
+2017-06-29 18:57:24.899 INFO  (qtp754666084-21) [   x:collection1] o.a.s.c.S.Request [collection1]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1498762641510&ts=1498762641510} status=503 QTime=1
+2017-06-29 18:57:24.907 INFO  (qtp754666084-17) [   x:collection1] o.a.s.c.S.Request [collection1]  webapp=/solr path=/admin/system params={wt=json&_=1498762644859} status=0 QTime=12
+2017-06-29 19:23:50.599 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1888442711
+2017-06-29 19:23:50.600 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for: solr.node
+2017-06-29 19:23:50.600 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for: solr.jvm
+2017-06-29 19:23:50.600 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for: solr.jetty
+2017-06-29 19:23:50.601 INFO  (coreCloseExecutor-12-thread-1) [   x:collection1] o.a.s.c.SolrCore [collection1]  CLOSING SolrCore org.apache.solr.core.SolrCore@2ab6379e
+2017-06-29 19:23:51.289 INFO  (coreCloseExecutor-12-thread-1) [   x:collection1] o.a.s.m.SolrMetricManager Closing metric reporters for: solr.core.collection1
