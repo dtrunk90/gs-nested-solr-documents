@@ -44,33 +44,37 @@ dependencies {
 task solrStart(type: Exec) {
 	workingDir 'src/main/resources/solr/bin'
 
-	commandLine 'cmd', '/c', 'solr.cmd'
-	commandLine './solr'
+	if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+		commandLine 'cmd', '/c', 'solr.cmd'
+	} else {
+		commandLine './solr'
+	}
 
-	args 'start'
+	args 'start', '-p', '8984'
 }
 
 task solrStop(type: Exec) {
 	workingDir 'src/main/resources/solr/bin'
 
-	commandLine 'cmd', '/c', 'solr.cmd'
-	commandLine './solr'
-
-	args 'stop', '-p 8983'
-
-	standardOutput = new ByteArrayOutputStream()
-
-	ext.output = {
-		return standardOutput.toString()
+	if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+		commandLine 'cmd', '/c', 'solr.cmd'
+	} else {
+		commandLine './solr'
 	}
+
+	args 'stop', '-p', '8984'
 }
 
-tasks.bootRun.dependsOn 'solrStart'
-
-bootRun {
-	doLast {
-		solrStop
-	}
+processResources {
+	exclude 'solr'
 }
+
+//tasks.bootRun.dependsOn 'solrStart'
+
+//bootRun {
+//	doLast {
+//		solrStop
+//	}
+//}
 
 wrapper.gradleVersion = '4.0'
