@@ -2,11 +2,12 @@ package com.github.dtrunk90.spring.data.solr.nested.document;
 
 import java.util.Collection;
 
+import org.apache.solr.client.solrj.beans.Field;
+import org.springframework.data.solr.core.mapping.ChildDocument;
+import org.springframework.data.solr.core.mapping.SolrDocument;
+
 import lombok.Getter;
 import lombok.Setter;
-
-import org.apache.solr.client.solrj.beans.Field;
-import org.springframework.data.solr.core.mapping.SolrDocument;
 
 @Getter
 @Setter
@@ -22,8 +23,7 @@ public class Product {
 	@Field
 	private boolean variant;
 
-	//@ChildDocument
-	@Field(child = true)
+	@ChildDocument
 	private Collection<Product> variants;
 
 }
