@@ -4,7 +4,7 @@
 ### Eclipse ###
 
 .metadata
-/bin/
+bin/
 tmp/
 *.tmp
 *.bak
@@ -79,5 +79,7 @@ gradle-app.setting
 # End of https://www.gitignore.io/api/gradle,eclipse
 
 # Solr
-src/main/resources/solr/server/logs
-src/main/resources/solr/server/solr/collection1/data
+!src/main/resources/solr/bin/
+src/main/resources/solr/server/logs/*
+src/main/resources/solr/server/solr/collection1/data/*
+src/main/resources/solr/server/solr/hsperfdata_dt/
