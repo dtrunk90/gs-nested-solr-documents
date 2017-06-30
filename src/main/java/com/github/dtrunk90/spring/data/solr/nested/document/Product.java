@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import org.apache.solr.client.solrj.beans.Field;
+import org.springframework.data.solr.core.mapping.ChildDocument;
 import org.springframework.data.solr.core.mapping.SolrDocument;
 
 @Getter
@@ -19,6 +20,7 @@ public class Product {
 	@Field
 	private String name;
 
+	@ChildDocument
 	@Field(child = true)
 	private Collection<Product> variants;
 
