@@ -80,6 +80,7 @@ gradle-app.setting
 
 # Solr
 !src/main/resources/solr/bin/
+src/main/resources/solr/bin/*.pid
 src/main/resources/solr/server/logs/*
 src/main/resources/solr/server/solr/collection1/data/*
 src/main/resources/solr/server/solr/hsperfdata_dt/
