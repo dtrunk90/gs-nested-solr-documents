@@ -11,8 +11,8 @@
 		<dd th:text="*{id}">12345</dd>
 		<dt>name:</dt>
 		<dd th:text="*{name}">Product 12345</dd>
-		<dt>variant:</dt>
-		<dd th:text="*{variant}">false</dd>
+		<dt>root:</dt>
+		<dd th:text="*{root}">true</dd>
 		<!--/*/<th:block th:unless="*{#lists.isEmpty(variants)}">/*/-->
 		<dt>variants:</dt>
 		<dd th:remove="all-but-first">
@@ -21,24 +21,24 @@
 				<dd th:text="*{id}">12345-red</dd>
 				<dt>name:</dt>
 				<dd th:text="*{name}">Product 12345 red</dd>
-				<dt>variant:</dt>
-				<dd th:text="*{variant}">true</dd>
+				<dt>root:</dt>
+				<dd th:text="*{root}">false</dd>
 			</dl>
 			<dl>
 				<dt>id:</dt>
 				<dd>12345-green</dd>
 				<dt>name:</dt>
 				<dd>Product 12345 green</dd>
-				<dt>variant:</dt>
-				<dd>true</dd>
+				<dt>root:</dt>
+				<dd>false</dd>
 			</dl>
 			<dl>
 				<dt>id:</dt>
 				<dd>12345-blue</dd>
 				<dt>name:</dt>
 				<dd>Product 12345 blue</dd>
-				<dt>variant:</dt>
-				<dd>true</dd>
+				<dt>root:</dt>
+				<dd>false</dd>
 			</dl>
 		</dd>
 		<!--/*/</th:block>/*/-->
@@ -48,7 +48,7 @@
 		<dd>67890</dd>
 		<dt>name:</dt>
 		<dd>Product 67890</dd>
-		<dt>variant:</dt>
+		<dt>root:</dt>
 		<dd>true</dd>
 	</dl>
 </body>

@@ -18,7 +18,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Iterable<Product> findAll() {
-		return repository.findAll();
+		return repository.findAllProductsWithVariants();
 	}
 
 	@Override
@@ -32,31 +32,29 @@ public class ProductServiceImpl implements ProductService {
 		Product p1 = new Product();
 		p1.setId("1234");
 		p1.setName("Product 1234");
+		p1.setRoot(true);
 		p1.setVariants(p1Variants);
 		productList.add(p1);
 
 		Product p1Variant1 = new Product();
 		p1Variant1.setId("1234-red");
 		p1Variant1.setName("Product 1234 red");
-		p1Variant1.setVariant(true);
 		p1Variants.add(p1Variant1);
 
 		Product p1Variant2 = new Product();
 		p1Variant2.setId("1234-green");
 		p1Variant2.setName("Product 1234 green");
-		p1Variant2.setVariant(true);
 		p1Variants.add(p1Variant2);
 
 		Product p1Variant3 = new Product();
 		p1Variant3.setId("1234-blue");
 		p1Variant3.setName("Product 1234 blue");
-		p1Variant3.setVariant(true);
 		p1Variants.add(p1Variant3);
 
 		Product p2 = new Product();
 		p2.setId("5678");
 		p2.setName("Product 5678");
-		p2.setVariant(true);
+		p2.setRoot(true);
 		productList.add(p2);
 
 		return repository.saveAll(productList);

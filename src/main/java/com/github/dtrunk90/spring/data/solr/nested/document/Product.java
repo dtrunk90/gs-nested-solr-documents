@@ -21,7 +21,7 @@ public class Product {
 	private String name;
 
 	@Field
-	private boolean variant;
+	private boolean root;
 
 	@ChildDocument
 	private Collection<Product> variants;
