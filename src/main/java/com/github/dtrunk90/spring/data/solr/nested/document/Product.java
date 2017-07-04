@@ -2,25 +2,26 @@ package com.github.dtrunk90.spring.data.solr.nested.document;
 
 import java.util.Collection;
 
-import org.apache.solr.client.solrj.beans.Field;
-import org.springframework.data.solr.core.mapping.ChildDocument;
-import org.springframework.data.solr.core.mapping.SolrDocument;
-
 import lombok.Getter;
 import lombok.Setter;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.solr.core.mapping.ChildDocument;
+import org.springframework.data.solr.core.mapping.Indexed;
+import org.springframework.data.solr.core.mapping.SolrDocument;
 
 @Getter
 @Setter
 @SolrDocument(collection = "collection1")
 public class Product {
 
-	@Field
+	@Id
 	private String id;
 
-	@Field
+	@Indexed("name_s")
 	private String name;
 
-	@Field
+	@Indexed("root_b")
 	private boolean root;
 
 	@ChildDocument
