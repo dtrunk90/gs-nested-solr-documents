@@ -39,7 +39,7 @@ dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-jetty:2.0.0.BUILD-SNAPSHOT'
 	compile 'org.springframework.boot:spring-boot-starter-thymeleaf:2.0.0.BUILD-SNAPSHOT'
 	compile 'org.springframework.data:spring-data-commons:2.0.0.BUILD-SNAPSHOT'
-	compile 'org.springframework.data:spring-data-solr:3.0.0.DATASOLR-394-SNAPSHOT'
+	compile 'org.springframework.data:spring-data-solr:3.0.0.BUILD-SNAPSHOT'
 }
 
 task solrStart(type: Exec) {
